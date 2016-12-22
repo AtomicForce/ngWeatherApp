@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" ng-app="weather-app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" ng-app="weather-app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" ng-app="weather-app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Weather App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./bower_components/html5-boilerplate/dist/css/normalize.css">
+        <link rel="stylesheet" href="./bower_components/html5-boilerplate/dist/css/main.css">
+        <link rel="stylesheet" href="./app/app.css">
+        <script src="./bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body ng-app="weather-app-init">
+        <!--[if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+
+        <weather-app-init></weather-app-init>
+
+        <!-- Include needed files -->
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./bower_components/angular-resource/angular-resource.js"></script>
+        <script src="./bower_components/chart.js/dist/Chart.min.js"></script>
+
+        <script src="./app/app.module.js"></script>
+
+        <script src="./app/components/weather-app/weather-app.directive.js"></script>
+        <script src="./app/components/city-data/city-data.directive.js"></script>
+        <script src="./app/components/tide-chart/tide-chart.directive.js"></script>
+        <script src="./app/components/weather-icon/weather-icon.directive.js"></script>
+        <script src="./app/components/icons/clear-svg/clear-svg.directive.js"></script>
+        <script src="./app/components/icons/clouds-svg/clouds-svg.directive.js"></script>
+        <script src="./app/components/icons/fog-svg/fog-svg.directive.js"></script>
+        <script src="./app/components/icons/snow-svg/snow-svg.directive.js"></script>
+        <script src="./app/components/icons/storm-svg/storm-svg.directive.js"></script>
+        <script src="./app/components/icons/windy-svg/windy-svg.directive.js"></script>
+
+        <script src="./app/services/openWeatherFactory.service.js"></script>
+        <script src="./app/services/worldTidesFactory.service.js"></script>
+        <script src="./app/services/setBackgroundImg.service.js"></script>
+        <script src="./app/services/setColorTemperature.service.js"></script>
+    </body>
+</html>

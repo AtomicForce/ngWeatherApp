@@ -1,0 +1,12 @@
+<div ng-switch="type | lowercase">
+    <div ng-switch-when="mist"><fog-svg /></div>
+    <div ng-switch-when="fog"><fog-svg /></div>
+    <div ng-switch-when="haze"><fog-svg /></div>
+    <div ng-switch-when="clear"><clear-svg /></div>
+    <div ng-switch-when="clouds"><clouds-svg /></div>
+    <div ng-switch-when="snow"><snow-svg /></div>
+    <div ng-switch-when="rain"><storm-svg /></div>
+    <div ng-switch-when="drizzle"><storm-svg /></div>
+    <div ng-switch-when="thunderstorm"><storm-svg /></div>
+    <div ng-switch-default><windy-svg /></div>
+</div>
