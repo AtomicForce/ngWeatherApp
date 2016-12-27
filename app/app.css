@@ -3,12 +3,10 @@
 html {
     font-family: roboto;
     height: 100%;
-    overflow: hidden;
 }
 
 body {
     height: 100%;
-    overflow: hidden;
 }
 
 .forecast-container {
