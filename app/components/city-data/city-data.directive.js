@@ -33,7 +33,6 @@ angular.module('components.city-data', ['openWeather-factory', 'setBackgroundImg
                     }
 
                     $scope.weatherForecast = weatherForecast;
-                    console.log($scope.weatherForecast);
                 });
 
                 $scope.backgroundImgUrl = setBackgroundImg($scope.city.weather[0].main);
