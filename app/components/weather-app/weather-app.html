@@ -1,5 +1,7 @@
 <div class="wrapper-flex" ng-cloak>
-    <div class="item-flex-1" ng-repeat="city in ctrl.weatherData">
+    <input class="form-control" placeholder='Search for another City..' ng-model="autocomplete" />
+
+    <div class="item-flex-1" ng-repeat="city in weatherData">
         <city-data city-weather-data="city" /></city-data>
     </div>
 </div>
