@@ -7,10 +7,11 @@ angular.module('openWeather-factory', [
 
     this.$get = function ($resource) {
         var c = openWeatherConfigs;
-        var url = [c.openWeatherUrl, c.endpoint].join('/');
-        return $resource(url + '?q=:location&units=:units&appid=:apiKey', {
+        var url = c.openWeatherUrl;
+        return $resource(url + '/:endpoint?q=:location&units=:units&appid=:apiKey', {
             apiKey: c.apiKey,
             units: c.units,
+            endpoint: '@endpoint',
             location: '@location'
         },
         {
@@ -19,7 +20,6 @@ angular.module('openWeather-factory', [
     };
 }).constant('openWeatherConfigs', {
     openWeatherUrl: 'http://api.openweathermap.org/data/2.5',
-    endpoint: null,
     apiKey: null,
     units: 'metric'
 });

@@ -1,5 +1,5 @@
-<div
-    class="background-center height-full separator"
+<div class="background-center height-full separator"
+ng-click="showChart = !showChart"
     style="background-image: url({{backgroundImgUrl}})">
     <div class="container-flex background-center height-full" style="background: {{backgroundGradient}}">
         <div class="item-flex-2">
@@ -23,6 +23,14 @@
                 <div class="item-table-cell">
                     Sunset: {{city.sys.sunset * 1000 | date: "h:mma"}}
                 </div>
+            </div>
+        </div>
+
+        <div class="item-flex-1" ng-if="weatherForecast.length && showChart">
+            <div class="forecast-wrapper" ng-repeat="forecast in weatherForecast">
+                <div class="item-flex-1">{{forecast.day}}</div>
+                <div class="item-flex-1">{{forecast.forecast.temp.max | number: 0}} °C</div>
+                <div class="item-flex-1"><weather-icon weather-type="forecast.forecast.weather[0].main"></weather-icon></div>
             </div>
         </div>
     </div>

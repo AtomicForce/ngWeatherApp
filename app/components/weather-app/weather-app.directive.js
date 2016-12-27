@@ -8,21 +8,24 @@ angular.module('components.weather-app', ['openWeather-factory', 'getLocation-fa
             getLocationFactory.get().$promise.then(function(data) {
                 var city = data.city + ',' + data.countryCode;
 
-                openWeatherFactory.query({location: city}).$promise.then(function(data) {
-                    $scope.weatherData = [data];
+                openWeatherFactory.query({location: city, endpoint: 'weather'}).$promise.then(function(data) {
+                    $scope.weatherData = data;
                 });
             });
         },
         link: function($scope, $element) {
             $scope.autocomplete = '';
 
-            $element.on('keypress', function(e) {
+            $scope.fetchCity = function(e) {
                 if (e.keyCode === 13) {
-                    openWeatherFactory.query({location: $scope.autocomplete}).$promise.then(function(data) {
-                        $scope.weatherData = [data];
+                    openWeatherFactory.query({
+                        location: $scope.autocomplete,
+                        endpoint: 'weather'
+                    }).$promise.then(function(data) {
+                        $scope.weatherData = data;
                     });
                 }
-            });
+            };
         }
     };
 });

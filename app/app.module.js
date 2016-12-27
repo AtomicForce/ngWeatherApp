@@ -12,7 +12,6 @@ angular.module('weather-app-init', [
     'getLocation-factory'
 ]).config(function (openWeatherFactoryProvider, getLocationFactoryProvider) {
     openWeatherFactoryProvider.setConfigs({
-        endpoint: 'weather',
         apiKey: '769f282b56f12ca726d10974e814e937'
     });
 
