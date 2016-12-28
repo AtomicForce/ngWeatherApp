@@ -26,7 +26,7 @@
             <div class="forecast-container" ng-if="weatherForecast.length && showChart">
                 <div class="forecast-wrapper" ng-repeat="forecast in weatherForecast">
                     <div class="item-flex-1">{{forecast.day}}</div>
-                    <div class="item-flex-1">
+                    <div class="item-flex-2">
                         {{forecast.forecast.temp.min | number: 0}} °C
                         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                         {{forecast.forecast.temp.max | number: 0}} °C
