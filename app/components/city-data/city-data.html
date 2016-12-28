@@ -14,7 +14,6 @@
                     <weather-icon weather-type="city.weather[0].main"></weather-icon>
                 </div>
             </div>
-
             <div class="container-table">
                 <div class="item-table-cell">
                     Sunrise: {{city.sys.sunrise * 1000 | date: "h:mma"}}
@@ -27,7 +26,11 @@
             <div class="forecast-container" ng-if="weatherForecast.length && showChart">
                 <div class="forecast-wrapper" ng-repeat="forecast in weatherForecast">
                     <div class="item-flex-1">{{forecast.day}}</div>
-                    <div class="item-flex-1">{{forecast.forecast.temp.max | number: 0}} °C</div>
+                    <div class="item-flex-1">
+                        {{forecast.forecast.temp.min | number: 0}} °C
+                        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        {{forecast.forecast.temp.max | number: 0}} °C
+                    </div>
                     <div class="item-flex-1"><weather-icon weather-type="forecast.forecast.weather[0].main"></weather-icon></div>
                 </div>
             </div>
